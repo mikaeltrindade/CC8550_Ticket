@@ -10,9 +10,14 @@ public class PapelMoeda {
     protected int quantidade;
 
     public PapelMoeda(int valor, int quantidade) {
+    if (valor == 2 || valor == 5 || valor == 10 || valor == 20 || valor == 50 || valor == 100) {
         this.valor = valor;
-        this.quantidade = quantidade;
+    } else {
+        throw new IllegalArgumentException("Nota inválida: " + valor);
     }
+    this.quantidade = quantidade;
+    }
+
 
     public int getValor() {
         return valor;
