@@ -10,13 +10,14 @@ public class Troco {
         int[] notas = {100, 50, 20, 10, 5, 2};
         papeisMoeda = new PapelMoeda[notas.length];
 
-        for (int i = 0; i < notas.length; i++) {
-            int quantidade = valor / notas[i]; // Calcula quantas cédulas dessa nota são necessárias
+        for (int nota : notas) {
+            int quantidade = valor / nota;
             if (quantidade > 0) {
-                papeisMoeda[i] = new PapelMoeda(notas[i], quantidade);
-                valor -= quantidade * notas[i]; // Atualiza o valor restante
+                troco.put(nota, quantidade);
+                valor %= nota;
             }
         }
+
 
         if (valor > 0) {
             throw new IllegalArgumentException("Não foi possível fornecer troco exato.");
