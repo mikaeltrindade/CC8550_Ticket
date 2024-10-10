@@ -37,6 +37,15 @@ public class Troco {
             this.troco = troco;
         }
 
+    public TrocoIterator getTroco() {
+    try {
+        return new TrocoIterator(this.troco);
+    } catch (Exception e) {
+        throw new RuntimeException("Erro ao calcular o troco.", e);
+    }
+    }
+
+
         @Override
         public boolean hasNext() {
             while (currentIndex < troco.papeisMoeda.length) {
