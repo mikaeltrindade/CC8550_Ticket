@@ -38,6 +38,11 @@ public class TicketMachine {
         return null;
     }
 
+    public boolean verificarSaldoSuficiente() {
+        return saldo >= valorTicket;
+    }
+
+
     public String imprimir() throws SaldoInsuficienteException {
         if (saldo < valor) {
             throw new SaldoInsuficienteException();
