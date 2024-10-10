@@ -48,14 +48,9 @@ public class Troco {
 
         @Override
         public boolean hasNext() {
-            while (currentIndex < troco.papeisMoeda.length) {
-                if (troco.papeisMoeda[currentIndex] != null) {
-                    return true;
-                }
-                currentIndex++;
-            }
-            return false;
+            return this.papeisMoeda.length > 0 && posicao < this.papeisMoeda.length;
         }
+
 
         @Override
         public PapelMoeda next() {
