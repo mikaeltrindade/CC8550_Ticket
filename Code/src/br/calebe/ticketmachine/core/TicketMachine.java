@@ -29,9 +29,10 @@ public class TicketMachine {
     }
 
 
-    public int getSaldo() {
+    public int getSaldoRestante() {
         return saldo;
     }
+
 
     public Iterator<Integer> getTroco() {
         return null;
